@@ -1,11 +1,17 @@
 // React imports
 import { FC } from 'react'
 // FS imports
-import { Title } from './style/styled-components'
+import Navbar from './layout/other/Navbar'
+import { DefaultStyleCleaner } from './style'
 
 const App: FC = () => {
   return (
-   <Title>Hello from styled components</Title>
+    <>
+      <DefaultStyleCleaner />
+      <div style={{ background: '#0B0205', height: '100vh' }}>
+        <Navbar />
+      </div>
+    </>
   )
 }
 
