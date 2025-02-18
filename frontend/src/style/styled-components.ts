@@ -1,7 +1,7 @@
 // Third party libraries imports
 import { styled, createGlobalStyle } from 'styled-components';
 // FS imports
-import { FlexContainerProps, ButtonProps, HeadingProps } from './styled-components-props';
+import { FlexContainerProps, ButtonProps, HeadingProps, TextProps, GridProps } from './styled-components-props';
 
 export const DefaultStyleProvider = createGlobalStyle`
 
@@ -68,7 +68,7 @@ export const Heading = styled.h1<HeadingProps>`
   margin: ${(props) => props.margin || '0'};
 `;
 
-export const Text = styled.p<any>`
+export const Text = styled.p<TextProps>`
   font-size: ${(props) => props.fontSize || '16px'};
   color: ${(props) => props.color || '#000'};
   margin: ${(props) => props.margin || '0'};
@@ -77,7 +77,7 @@ export const Text = styled.p<any>`
   font-family: ${(props) => props.fontFamily || 'Atkinson Hyperlegible Next sans-serif'};
 `;
 
-export const Grid = styled.div<any>`
+export const Grid = styled.div<GridProps>`
   display: grid;
   grid-template-columns: ${(props) => props.gridTemplateColumns || 'auto'};
   grid-template-rows: ${(props) => props.gridTemplateRows || 'auto'};
