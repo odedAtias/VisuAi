@@ -3,7 +3,7 @@ import { styled, createGlobalStyle } from 'styled-components';
 // FS imports
 import { FlexContainerProps, ButtonProps, HeadingProps } from './styled-components-props';
 
-export const DefaultStyleCleaner = createGlobalStyle`
+export const DefaultStyleProvider = createGlobalStyle`
 
     @import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next&display=swap');
 
@@ -30,6 +30,7 @@ export const FlexContainer = styled.div<FlexContainerProps>`
   gap: ${(props) => props.gap || '0'};
   background: ${(props) => props.background || 'transparent'};
   padding: ${(props) => props.padding || '0'};
+  margin: ${(props) => props.margin || '0'};
 `;
 
 export const Button = styled.button<ButtonProps>`
@@ -44,7 +45,7 @@ export const Button = styled.button<ButtonProps>`
   transition: background-color 0.3s ease;
 
   &:hover {
-    background-color: ${(props) => props.hoverBackgroundColor || '#3700b3'};
+    background-color: ${(props) => props.hoverBackgroundColor || 'transparent'};
   }
 
   &:focus {
@@ -57,18 +58,43 @@ export const Button = styled.button<ButtonProps>`
   }
 `;
 
-// Define the HeadingProps interface to allow customization for different heading levels
-
-
-// Create a generic heading component that can be used for any heading tag (h1, h2, etc.)
 export const Heading = styled.h1<HeadingProps>`
   font-size: ${(props) => props.fontSize || '32px'};
   font-weight: ${(props) => props.fontWeight || 'lighter'};
   color: ${(props) => props.color || '#000'};
   line-height: ${(props) => props.lineHeight || '1.2'};
   text-align: ${(props) => props.textAlign || 'left'};
-  font-family: ${(props) => props.fontFamily || 'Arial, sans-serif'};
+  font-family: ${(props) => props.fontFamily || 'Atkinson Hyperlegible Next sans-serif'};
   margin: ${(props) => props.margin || '0'};
 `;
 
+export const Text = styled.p<any>`
+  font-size: ${(props) => props.fontSize || '16px'};
+  color: ${(props) => props.color || '#000'};
+  margin: ${(props) => props.margin || '0'};
+  line-height: ${(props) => props.lineHeight || '1.2'};
+  text-align: ${(props) => props.textAlign || 'left'};
+  font-family: ${(props) => props.fontFamily || 'Atkinson Hyperlegible Next sans-serif'};
+`;
 
+export const Grid = styled.div<any>`
+  display: grid;
+  grid-template-columns: ${(props) => props.gridTemplateColumns || 'auto'};
+  grid-template-rows: ${(props) => props.gridTemplateRows || 'auto'};
+  grid-gap: ${(props) => props.gridGap || '0'}
+  grid-auto-flow: ${(props) => props.gridAutoFlow || 'row'};
+  grid-auto-rows: ${(props) => props.gridAutoRows || 'auto'};
+  grid-auto-columns: ${(props) => props.gridAutoColumns || 'auto'};
+  margin: ${(props) => props.margin || '0'};
+  padding: ${(props) => props.padding || '0'};
+  background: ${(props) => props.background || 'transparent'};
+  justify-items: ${(props) => props.justifyItems || 'normal'};
+  align-items: ${(props) => props.alignItems || 'normal'};
+  justify-content: ${(props) => props.justifyContent || 'normal'};
+  align-content: ${(props) => props.alignContent || 'normal'};
+  overflow-x: ${(props) => props.overflowX || 'auto'};
+  overflow-y: ${(props) => props.overflowY || 'auto'};
+  gap: ${(props) => props.gap || '0'};
+  width: ${(props) => props.width || 'auto'};
+  height: ${(props) => props.height || 'auto'};
+  `;
