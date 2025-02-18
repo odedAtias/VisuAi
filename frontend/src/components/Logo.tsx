@@ -1,11 +1,15 @@
 // React imports
 import { FC } from 'react'
 // Style imports
-import { Heading } from '../style'
+import { Heading, HeadingProps } from '../style'
 
-const Logo: FC = () => {
+interface Props {
+    headingProps?: HeadingProps;
+};
+
+const Logo: FC<Props> = ({ headingProps = {} }: Props) => {
     return (
-        <Heading color='white'>VisuAi</Heading>
+        <Heading $color='white' {...headingProps}>VisuAi</Heading>
     )
 }
 

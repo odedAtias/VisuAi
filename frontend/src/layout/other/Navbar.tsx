@@ -1,15 +1,17 @@
 // React imports
 import { FC } from 'react'
-import Logo from '../../components/Logo'
+// Style imports
 import { Button, FlexContainer } from '../../style'
+// FS imports
+import Logo from '../../components/Logo'
 
 const Navbar: FC = () => {
     return (
-        <FlexContainer justifyContent='space-between' alignItems='center' padding='20px'>
+        <FlexContainer $padding='20px' $justifyContent='space-between' $alignItems='center'>
             {/* Logo */}
             <Logo />
             {/* Button */}
-            <Button>Generate Image</Button>
+            <Button $hoverBackgroundColor='red'>Generate Image</Button>
         </FlexContainer>
     )
 }
